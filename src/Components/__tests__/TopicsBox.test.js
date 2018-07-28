@@ -1,11 +1,16 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import TopicsBox from 'components/TopicsBox';
+import Root from 'root';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = mount(<TopicsBox />);  
+  wrapped = mount(
+    <Root>
+      <TopicsBox />
+    </Root>
+  );
 });
 
 afterEach(() => {
@@ -24,14 +29,14 @@ describe('the text area',() => {
     }) //Find the textarea and simulate event
     wrapped.update(); //setstate is asynchronous, we need to wait for the actual render to happen, hence we force our component to render itself
   });
-  
+
   it('has a text area that users can type in', () => {
     expect(wrapped.find('textarea').prop('value')).toEqual('new topics')
   });
 
   it('when form is submitted, text area get emptied', () => {
     wrapped.find('form').simulate('submit')
-    wrapped.update(); 
+    wrapped.update();
     expect(wrapped.find('textarea').prop('value')).toEqual('')
   });
 })
