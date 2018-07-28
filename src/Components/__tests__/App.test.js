@@ -1,8 +1,8 @@
 import React from 'react';
 
-import App from 'Components/App'; //Change to absolute imports 
-import TopicsBox from 'Components/TopicsBox'; //So that I can move to the test file around without breaking import statement in the future
-import TopicsList from 'Components/TopicsList';
+import App from 'components/App'; //Change to absolute imports 
+import TopicsBox from 'components/TopicsBox'; //So that I can move to the test file around without breaking import statement in the future
+import TopicsList from 'components/TopicsList';
 
 import { shallow } from 'enzyme'; //npm install --save enzyme enzyme-adapter-react-16
 

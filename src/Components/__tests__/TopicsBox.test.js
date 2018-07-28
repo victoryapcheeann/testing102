@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import TopicsBox from 'Components/TopicsBox';
+import TopicsBox from 'components/TopicsBox';
 
 let wrapped;
 

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import * as actions from 'actions';
 
 class TopicsBox extends Component {
   state = { topics: ''};
@@ -9,7 +11,7 @@ class TopicsBox extends Component {
   
   handleSubmit = event => {
       event.preventDefault(); //Prevent the page from auto-reload
-      // TODO: Call an action creator 
+      this.props.saveTopics(this.state.topics)
       // TODO: Save the comment
       this.setState({ topics: "" })
   }
@@ -27,4 +29,4 @@ class TopicsBox extends Component {
   }
 }
 
-export default TopicsBox
+export default connect(null, actions)(TopicsBox);
